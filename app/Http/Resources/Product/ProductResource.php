@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Product;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\ReviewResource;
 
 class ProductResource extends JsonResource
 {
@@ -24,7 +25,8 @@ class ProductResource extends JsonResource
             'rating' => $this->reviews->count('star') > 0 ? round($this->reviews->sum('star')/$this->reviews->count('star'),2) : 'Not rated yet',
             'href' => [
                 'reviews' => route('reviews.index',$this->id)
-            ],  
+            ],
+            'reviews' => ReviewResource::collection($this->reviews), 
         ];
     }
 }
