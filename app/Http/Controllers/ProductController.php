@@ -9,6 +9,7 @@ use App\Http\Resources\Product\ProductCollection;
 
 class ProductController extends Controller
 {
+    
 
     public function index()
     {
