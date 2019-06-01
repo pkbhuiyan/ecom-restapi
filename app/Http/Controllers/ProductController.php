@@ -11,14 +11,10 @@ use App\Http\Resources\Product\ProductCollection;
 
 class ProductController extends Controller
 {
-<<<<<<< HEAD
-    
-=======
     public function __construct()   
     {
         $this->middleware('auth:api')->except('index','show');
     }
->>>>>>> b48126e5d78ffd145c15c667151755287b473845
 
     public function index()
     {
