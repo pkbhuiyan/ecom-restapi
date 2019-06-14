@@ -17,6 +17,7 @@ class ProductCollection extends Resource
     {
         return [
             'name' => $this->name,
+            'user_id' => $this->user_id,
             'discount' => $this->discount,
             'stock' => $this->stock == 0 ? 'Out of stock' : $this->stock,
             'totalPrice' => round((1-($this->discount/100)) * $this->price,2),

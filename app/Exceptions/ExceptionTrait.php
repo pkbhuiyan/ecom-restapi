@@ -19,7 +19,7 @@ trait ExceptionTrait{
             return $this->HttpRouteResponse();
         }
 
-        return parent::render($request, $exception);
+        return parent::render($request, $e);
     }
 
     private function isModel($e)

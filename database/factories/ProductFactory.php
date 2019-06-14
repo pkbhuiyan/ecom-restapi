@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\User;
+
 
 $factory->define(App\Model\Product::class, function (Faker $faker) {
     return [
@@ -11,7 +11,7 @@ $factory->define(App\Model\Product::class, function (Faker $faker) {
         'stock' => $faker->randomDigit,
         'discount' => $faker->numberBetween($min = 4, $max = 10),
         'user_id' => function(){
-            return User::all()->random();
+            return App\User::all()->random();
         },
         
     ];
